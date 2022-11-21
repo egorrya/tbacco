@@ -45,10 +45,10 @@
   },
   "dependencies": {
     "core-js": "3",
-    "framer-motion": "^4.1.17",
+    "framer-motion": "^7.6.7",
     "html-react-parser": "^3.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-laag": "^2.0.2",
     "react-redux": "^7.2.0",

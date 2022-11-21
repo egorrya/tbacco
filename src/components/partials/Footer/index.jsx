@@ -48,16 +48,24 @@ export default function PageContainerWithAside({ children, customAction }) {
 
   return (
     <motion.footer
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, backgroundColor: '#fff' }}
+      animate={{ opacity: 1, backgroundColor: '#111' }}
       transition={{
-        delay: `1`,
+        delay: 1,
       }}
       className="footer"
     >
       <div className="container">
         <div className="aside-content__footer footer__top">
-          <div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: 0.7,
+              duration: 1.4,
+            }}
+          >
             {tbaccoLinks.length && (
               <div className="aside-content__panel__categories__primary">
                 <p className="aside-content__panel__categories__primary__title">
@@ -79,9 +87,18 @@ export default function PageContainerWithAside({ children, customAction }) {
                 ))}
               </div>
             )}
-          </div>
+          </motion.div>
 
-          <div className="aside-content__panel__categories__primary">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: 1.4,
+              duration: 1.4,
+            }}
+            className="aside-content__panel__categories__primary"
+          >
             <p className="aside-content__panel__categories__primary__title">
               Мы на связи
             </p>
@@ -124,10 +141,19 @@ export default function PageContainerWithAside({ children, customAction }) {
                 ))}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
-        <div className="aside-content__footer">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            delay: 2,
+            duration: 1.4,
+          }}
+          className="aside-content__footer"
+        >
           <div className="aside-content__footer__links">
             {navSecondaryLinks.map((r) => (
               <SoftLink
@@ -148,7 +174,7 @@ export default function PageContainerWithAside({ children, customAction }) {
             Информация, представленная на сайте предназначена исключительно в
             ознакомительных целях и только для граждан старше 18 лет.
           </div>
-        </div>
+        </motion.div>
       </div>
     </motion.footer>
   );

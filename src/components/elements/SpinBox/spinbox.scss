@@ -14,11 +14,11 @@
   }
 
   &__value {
-    font-size: 18px;
-    // border: 1px solid $dark-gray-color;
+    font-size: 16px;
+    border: 0.7px solid $dark-color;
     border-radius: $border-radius;
-    width: 2.8em;
-    padding: 0.8em 0;
+    width: 1.8em;
+    padding: 0.4em 0;
     text-align: center;
 
     // hide default arrows

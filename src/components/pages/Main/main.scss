@@ -284,8 +284,15 @@
 }
 
 .promo {
+  background-color: $dark-color;
+  background-image: url('../../../../assets/img/colored-smoke.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   width: 100%;
-  height: 1100px;
+  height: 1000px;
   position: relative;
   z-index: 0;
 
@@ -664,7 +671,7 @@
   }
 
   .promo {
-    height: 800px;
+    height: 700px;
 
     & .container {
       flex-direction: row;
@@ -676,7 +683,7 @@
       height: 100%;
 
       &__title {
-        font-size: 36px;
+        font-size: 30px;
       }
 
       &__subtitle {
@@ -691,8 +698,9 @@
     }
 
     &__3d {
+      margin-top: 5%;
       width: 50%;
-      height: 100%;
+      height: 80%;
     }
   }
 
@@ -755,11 +763,11 @@
   .promo {
     &__info {
       &__title {
-        font-size: 54px;
+        font-size: 36px;
       }
 
       &__subtitle {
-        font-size: 18px;
+        font-size: 15px;
         margin-top: 30px;
       }
     }

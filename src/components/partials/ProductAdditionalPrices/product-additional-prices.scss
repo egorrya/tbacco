@@ -8,10 +8,12 @@
   margin-left: 0.5em;
 
   &__list {
-    display: none;
+    display: block;
+    visibility: hidden;
     position: absolute;
     bottom: 25px;
-    left: 0px;
+    left: 25%;
+    transform: translateX(-46%);
     font-weight: normal;
     font-size: 13px;
     line-height: normal;
@@ -21,9 +23,13 @@
     background: $light-color;
     border-radius: $border-radius;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    opacity: 0;
 
     &.active {
-      display: block;
+      // display: block;
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.4s ease-in-out;
     }
 
     & > p {

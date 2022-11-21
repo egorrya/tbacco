@@ -35,10 +35,9 @@ export default function ProductPreview() {
     <motion.dialog
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       transition={{
         delay: 0.5,
-        duration: 1,
+        duration: 1.5,
       }}
       className="product-preview"
       onClick={onDialogClick}

@@ -22,6 +22,7 @@ export default function FullPageContainer({ children }) {
           animate={{ opacity: 1 }}
           transition={{
             delay: 0.5,
+            duration: 1.6,
           }}
           className="page-body"
         >

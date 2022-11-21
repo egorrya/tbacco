@@ -357,7 +357,8 @@ export default function Catalog() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            delay: `0.3`,
+            delay: 0.3,
+            duration: 1.6,
           }}
           className="catalog__body__filters__container"
           style={filtersOpen ? { display: 'flex' } : {}}
@@ -569,6 +570,7 @@ export default function Catalog() {
                 animate={{ opacity: 1 }}
                 transition={{
                   delay: index * 0.4,
+                  duration: 1.6,
                 }}
                 key={data.id}
                 className="catalog__body__items__item"
