@@ -1,0 +1,149 @@
+@import '../../../styles/vars';
+
+$card-size-sm: 260px;
+$card-size-md: 240px;
+$card-size-lg: 300px;
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 100%;
+  max-width: $card-size-sm;
+
+  &__img-container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+
+    aspect-ratio: 1/1;
+    padding-top: 100%;
+    border-radius: $border-radius;
+
+    height: $card-size-sm;
+    width: $card-size-sm;
+    cursor: pointer;
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      // border: solid 1px $gray-color;
+
+      > img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0.7rem 0 0.2rem 0;
+    padding: 0 10px;
+  }
+
+  &__price {
+    text-align: center;
+    font-size: 17px;
+    margin: 0.5em 0 0 0;
+    padding: 0 10px;
+  }
+
+  &__purchase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em 0;
+    min-height: 3em;
+    padding: 0 10px;
+
+    &__button {
+      background-color: $primary-color;
+      font-size: 15px;
+      padding: 0.8em 1.6em;
+      margin-right: 0.7em;
+      border: none;
+      border-radius: $border-radius;
+
+      color: $light-color;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      transition: background-color 0.35s ease-in-out, color 0.3s ease-in-out,
+        box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $light-color !important;
+        color: $dark-color !important;
+        box-shadow: rgba(17, 12, 46, 0.3) 0px 0px 6px 0px !important;
+      }
+    }
+
+    .custom-link {
+      font-size: 14px;
+    }
+  }
+
+  &__brand {
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  .product-card {
+    max-width: $card-size-md;
+
+    &__img-container {
+      height: $card-size-md;
+      width: $card-size-md;
+    }
+  }
+}
+
+@media screen and (min-width: $size-lg) {
+  .product-card {
+    max-width: $card-size-lg;
+
+    &__img-container {
+      height: $card-size-lg;
+      width: $card-size-lg;
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-card {
+    &__img-container__link:hover {
+      border-color: $primary-color;
+    }
+
+    &__purchase__button {
+      &:hover {
+        background-color: $primary-color;
+        color: $light-color;
+
+        .icon-hover {
+          display: block;
+        }
+        .icon-default {
+          display: none;
+        }
+      }
+    }
+  }
+}

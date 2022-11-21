@@ -1,0 +1,119 @@
+@import '../../../styles/vars';
+
+.wishlist {
+  &__empty {
+    text-align: center;
+  }
+
+  &__list {
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      padding: 0.8em 0.5em;
+      border-bottom: solid 2px $dark-gray-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &__info,
+      &__delete {
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: 100%;
+
+          max-width: 80px;
+          max-height: 80px;
+        }
+      }
+
+      &__info {
+        &__title {
+          margin-left: 0.4em;
+        }
+      }
+
+      &__delete {
+        margin-left: 0.8em;
+        cursor: pointer;
+
+        &-line {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 1.5em;
+          width: 1.5em;
+          border: none;
+          background-color: transparent;
+          padding: 0;
+          cursor: pointer;
+
+          &:active,
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+
+          > .icon-hover {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  .wishlist {
+    &__list {
+      &__item {
+        font-size: 16px;
+
+        &__info,
+        &__delete {
+          img {
+            max-width: 120px;
+            max-height: 120px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-lg) {
+  .wishlist {
+    &__list {
+      &__item {
+        font-size: 18px;
+
+        &__info,
+        &__delete {
+          img {
+            max-width: 160px;
+            max-height: 160px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wishlist__list__item__delete:hover {
+    color: $primary-color;
+
+    .icon-hover {
+      display: block;
+    }
+
+    .icon-default {
+      display: none;
+    }
+  }
+}

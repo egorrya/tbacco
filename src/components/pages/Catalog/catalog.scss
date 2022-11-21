@@ -1,0 +1,403 @@
+@import '../../../styles/vars';
+
+.simple-space {
+  display: inline;
+}
+
+.catalog__body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__brands {
+    margin: 2em 0 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__persistent,
+    &__hidden {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__button {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 1em 0;
+      align-self: flex-end;
+    }
+
+    &__card {
+      width: 15%;
+      min-width: 120px;
+      height: 150px;
+      margin: 1em 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      color: $dark-color;
+      text-decoration: none;
+
+      &__container {
+        position: relative;
+        // background-color: $gray-color;
+        box-shadow: 0 2px 10px rgba(17, 12, 46, 0.1);
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          width: 130px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__filters {
+    display: flex;
+    margin: 0.5em 0 1em;
+
+    &__container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+    }
+
+    &__items {
+      display: flex;
+      flex-wrap: wrap;
+
+      &__item {
+        background: $light-color;
+        border: 1px solid $dark-color;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        padding: 0.7em;
+        margin: 0.5em 1em 0.5em 0;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+        &.active {
+          background-color: $dark-color;
+          color: $light-color;
+
+          .catalog__body__filters__items__item__arrow {
+            filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(90deg)
+              brightness(103%) contrast(101%);
+          }
+        }
+
+        &__arrow {
+          width: 15px;
+          height: 9px;
+          margin-left: 0.6em;
+          background-image: url("data:image/svg+xml,%3Csvg width='15' height='9' viewBox='0 0 15 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.58606 1.57153L7.71103 7.6965L13.8643 1.60563' stroke='black' stroke-width='1.7634'/%3E%3C/svg%3E");
+        }
+      }
+    }
+
+    &__open {
+      display: none;
+      background: $light-color;
+      border: 0px solid $dark-color;
+      box-shadow: 0 2px 10px rgba($color: #000000, $alpha: 0.1);
+
+      border-radius: $border-radius;
+      align-items: center;
+      font-size: 14px;
+      padding: 1.3em;
+
+      & > div {
+        margin-left: auto;
+      }
+    }
+
+    &__controls {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+      min-width: 30%;
+
+      > button {
+        width: fit-content;
+        padding: 0.9em 0.9em;
+      }
+
+      &__clear {
+        // text-decoration: underline;
+        cursor: pointer;
+        margin-left: 1em;
+      }
+    }
+  }
+
+  &__access-message {
+    text-align: center;
+    margin: 1.5em 0;
+  }
+
+  &__items {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+
+    &__item {
+      box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+      border-radius: $border-radius;
+      width: 100%;
+      margin: 1em 0;
+      padding: 10px;
+      background-color: $light-color;
+      z-index: 9;
+
+      transition: box-shadow 0.5s ease-in-out;
+
+      &:hover {
+        box-shadow: rgba(17, 12, 46, 0.35) 0px 48px 100px 0px;
+      }
+    }
+
+    &__nothing {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      margin: 1.5em auto;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3em auto;
+
+    &__item {
+      font-size: 16px;
+      line-height: 1em;
+      padding: 0.7em 0;
+      margin-left: 0.2em;
+      margin-right: 0.2em;
+      border: solid 1px $dark-color;
+      border-radius: $border-radius;
+      min-width: 2.6em;
+      text-align: center;
+      color: $dark-color;
+      text-decoration: none;
+
+      &.pagination-active {
+        border-color: $primary-color;
+        background-color: $primary-color;
+        color: $light-color;
+      }
+    }
+  }
+}
+
+.filter {
+  &__common {
+    font-size: 14px;
+
+    > * {
+      display: flex;
+      flex-direction: column;
+      margin: 0.3em 0;
+    }
+  }
+
+  &__choice {
+    display: flex;
+    flex-direction: column;
+
+    .ScrollbarsCustom {
+      height: 120px !important;
+      min-width: 180px;
+      margin: 0;
+
+      &-Wrapper {
+        margin-left: 14px;
+      }
+
+      &-Content {
+        display: flex;
+        flex-direction: column;
+
+        > * {
+          display: flex;
+          flex-direction: column;
+          margin: 0.3em 0;
+        }
+      }
+
+      &-TrackY {
+        width: 2px !important;
+        left: 0;
+        background-color: $gray-color !important;
+
+        & > .ScrollbarsCustom-ThumbY {
+          background-color: $dark-color !important;
+        }
+      }
+    }
+  }
+
+  &__minmax {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .custom-text-input {
+      font-size: 14px;
+    }
+
+    > * {
+      margin: 0 0.3em;
+    }
+  }
+
+  &__bool {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1536px) {
+  .catalog__body__items {
+    grid-template-columns: 1fr 1fr 1fr !important;
+  }
+}
+
+@media screen and (max-width: $size-lg) {
+  .catalog__body__items {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .catalog__body__filters {
+    &__items__item {
+      font-size: 13px;
+    }
+
+    &__controls {
+      // flex-direction: column;
+      font-size: 13px;
+
+      &__clear {
+        // margin-left: 0;
+        // margin-top: 1em;
+        // text-align: center;
+      }
+    }
+  }
+}
+
+.product-card {
+  max-width: 100%;
+  width: 100%;
+
+  &__img-container {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+  .catalog__body__items {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .catalog__body__filters {
+    position: relative;
+
+    &__container {
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.99);
+      box-shadow: 0 2px 10px rgba($color: #000000, $alpha: 0.1);
+      padding: 2rem 0;
+      border-radius: $border-radius;
+    }
+
+    &__items {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &__item {
+        margin: 0.5em;
+      }
+    }
+
+    &__controls {
+      margin-top: 1em;
+    }
+
+    &__open {
+      display: flex;
+      border: 0px solid $dark-color;
+      box-shadow: 0 2px 10px rgba($color: #000000, $alpha: 0.1);
+    }
+  }
+  .titled-page__title {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 920.98px) {
+  .catalog__body__filters__items {
+    display: flex !important;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .catalog__body__items {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+// @media screen and (min-width: 2100px) {
+//   .catalog__body__items {
+//     grid-template-columns: repeat(6, 1fr) !important;
+//   }
+// }
+
+@media (hover: hover) and (pointer: fine) {
+  .catalog__body {
+    &__nav__item:hover:not(.pagination-active) {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+
+    &__filters__controls__clear:hover {
+      color: $primary-color;
+    }
+  }
+}

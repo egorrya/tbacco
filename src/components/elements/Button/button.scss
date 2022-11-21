@@ -1,0 +1,32 @@
+@import '../../../styles/vars';
+
+button.custom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: $light-color;
+  background-color: $primary-color;
+  /* border-radius: 0.3em; */
+  padding: 0.9em 1em;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  border: 0px solid $primary-color;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out;
+  // max-width: 300px;
+  margin: auto;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: $dark-color;
+    background-color: $light-color;
+    box-shadow: 0 2px 11px 0 rgba(0, 0, 0, 0.2);
+  }
+}

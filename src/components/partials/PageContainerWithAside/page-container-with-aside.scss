@@ -1,0 +1,103 @@
+@import '../../../styles/vars';
+
+.content {
+  // display: flex;
+  width: 100%;
+}
+
+// .aside {
+//   width: 20%;
+//   height: 100%;
+//   position: fixed;
+//   display: flex;
+//   flex-direction: column;
+//   background-color: $dark-color;
+//   overflow-y: scroll;
+
+//   &-fake {
+//     width: 20%;
+//   }
+
+//   &__logo {
+//     font-size: 38px;
+//     text-decoration: none;
+//     color: $light-color;
+//     margin: 0.8em auto;
+//   }
+// }
+
+.main-page-area {
+  width: 100%;
+  display: flex;
+
+  &-dark {
+    background-color: $dark-color;
+    color: $light-color;
+
+    .page-nav__links__link {
+      color: $light-color;
+    }
+
+    .cart-link-btn > img,
+    .customer-link-btn > img {
+      // https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element#answer-53336754
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(307deg)
+        brightness(103%) contrast(105%);
+    }
+
+    .page-nav__customer__phones > a {
+      color: white;
+    }
+
+    .page-body {
+      position: relative;
+      // min-height: calc(100% - 90px);
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        // background: url(../../../../assets/img/smoke.png) 0 20% no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+  margin-bottom: 450px;
+
+  @media screen and (max-width: 630px) {
+    margin-bottom: 600px;
+  }
+}
+
+@media screen and (max-width: $size-lg) {
+  // .aside {
+  //   width: 35%;
+
+  //   &-fake {
+  //     width: 35%;
+  //   }
+  // }
+
+  .main-page-area {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: $size-md - 1) {
+  // .aside {
+  //   display: none;
+
+  //   &-fake {
+  //     display: none;
+  //   }
+  // }
+
+  .main-page-area {
+    width: 100%;
+  }
+}

@@ -1,0 +1,12 @@
+@import '../../../styles/vars';
+
+.titled-block {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 0.6em;
+  }
+}

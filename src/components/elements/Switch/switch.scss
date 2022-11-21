@@ -1,0 +1,31 @@
+@import '../../../styles/vars';
+
+.custom-switch {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px $dark-gray-color;
+
+  border-radius: $border-radius;
+
+  &__element {
+    border-radius: 8px;
+
+    width: 48%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7em 0.2em;
+    margin: 0.1em;
+  }
+
+  &__enabled {
+    cursor: pointer;
+  }
+
+  &__active {
+    background-color: $primary-color;
+    color: $light-color;
+  }
+}

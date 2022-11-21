@@ -1,0 +1,27 @@
+@import '../../../styles/vars';
+
+.register-verify-content {
+  max-width: 640px;
+
+  form {
+    > div:first-child {
+      margin-bottom: 1em;
+    }
+
+    > * {
+      margin-top: 0.6em;
+      margin-bottom: 0.6em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  button {
+    font-size: 16px;
+    font-weight: bold;
+    width: 260px;
+    padding: 0.6em 1.2em;
+  }
+}

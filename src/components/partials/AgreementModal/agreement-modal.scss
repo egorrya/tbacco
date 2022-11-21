@@ -1,0 +1,86 @@
+@import '../../../styles/vars';
+
+#agreement-policy {
+  display: none;
+}
+
+#agreement-policy:checked ~ .agreement-policy {
+  z-index: 9999;
+  display: flex;
+}
+
+.agreement-policy {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.65);
+
+  &__panel {
+    width: 90%;
+    max-width: $max-width * 0.45;
+    max-height: 80%;
+    overflow-y: auto;
+    color: $dark-color;
+    background-color: $light-color;
+    font-family: $primary-font-family;
+    font-size: 18px;
+    line-height: 1.33;
+    padding: 2em 1.4em;
+
+    p {
+      margin: 0 0 1em 0;
+      padding: 0;
+    }
+
+    .custom-checkbox__label {
+      font-size: 14px;
+      margin: 0 0 1em 0;
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+
+      > * {
+        border-radius: 5px;
+      }
+
+      .custom-button:first-child {
+        margin-bottom: 0.9em;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  .agreement-policy {
+    &__panel {
+      &__buttons {
+        flex-direction: row;
+        align-items: center;
+
+        .custom-button {
+          margin-right: 0.5em;
+
+          &:first-child {
+            margin-bottom: 0;
+          }
+        }
+
+        .custom-link-button {
+          margin-left: 0.5em;
+        }
+
+        .custom-button,
+        .custom-link-button {
+          width: 50%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

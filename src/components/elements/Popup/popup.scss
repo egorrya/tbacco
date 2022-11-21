@@ -1,0 +1,29 @@
+@import '../../../styles/vars';
+
+.checkout-popup-container {
+  position: fixed;
+  z-index: 100;
+  right: 1em;
+  bottom: 1em;
+  background-color: $primary-color;
+  color: #fff;
+  padding: 1em 2em;
+  border-radius: 0.4em;
+  max-width: max(50%, 300px);
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    margin: 0.3em auto;
+  }
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s 0.5s;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s;
+}

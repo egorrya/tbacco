@@ -1,0 +1,213 @@
+@import '../../../styles/vars';
+
+$transition-in: 0.1s;
+$transition-out: 0.3s 0.4s;
+
+.header {
+  transition: $transition-out, box-shadow 0.5s;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 $padding-sm;
+  background-color: $light-color;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 999;
+
+  &--scroll {
+    box-shadow: 0 2px 17px rgba($color: #000000, $alpha: 0.15);
+  }
+
+  &-dark {
+    background-color: $dark-color;
+    transition: $transition-in;
+
+    .header {
+      &__menu-btn {
+        &__icon {
+          background: $light-color;
+
+          &::after,
+          &::before {
+            background: $light-color;
+          }
+        }
+      }
+
+      &__logo-btn {
+        color: $light-color;
+        transition: $transition-in;
+      }
+
+      &__cart-btn > img,
+      &__profile-btn > img {
+        // https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element#answer-53336754
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(307deg)
+          brightness(103%) contrast(105%);
+        transition: $transition-in;
+      }
+    }
+  }
+
+  &-dark-force {
+    background-color: $dark-color;
+
+    .header {
+      &__menu-btn {
+        &__icon {
+          background: $light-color;
+
+          &::after,
+          &::before {
+            background: $light-color;
+          }
+        }
+      }
+
+      &__logo-btn {
+        color: $light-color;
+        transition: $transition-in;
+      }
+
+      &__cart-btn > img,
+      &__profile-btn > img {
+        // https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element#answer-53336754
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(307deg)
+          brightness(103%) contrast(105%);
+        transition: $transition-in;
+      }
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__menu-btn {
+    width: 22%;
+    max-width: 80px;
+    height: 25px;
+    transition: $transition-out;
+    display: flex;
+    justify-content: stretch;
+
+    &__icon {
+      display: block;
+      position: relative;
+      background: $dark-color;
+      width: 40%;
+      height: 3px;
+      transition: $transition-out;
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: $dark-color;
+        width: 100%;
+        height: 3px;
+        transition: $transition-out;
+      }
+
+      &::after {
+        top: 10px;
+      }
+
+      &::before {
+        top: -10px;
+      }
+    }
+  }
+
+  &__logo-btn {
+    width: auto;
+    height: 36px;
+    font-size: 22px;
+    text-decoration: none;
+    color: $dark-color;
+    transition: $transition-out;
+  }
+
+  &__customer {
+    display: flex;
+    justify-content: space-between;
+    width: 22%;
+    max-width: 80px;
+    margin-top: 5px;
+  }
+
+  &__cart-btn,
+  &__profile-btn {
+    > img {
+      transition: $transition-out;
+    }
+  }
+
+  &__menu-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    top: 60px;
+    left: 0;
+    right: 0;
+    height: 0;
+    opacity: 1;
+    transition: 0.5s;
+    overflow: hidden;
+    background-color: $light-color;
+    z-index: 998;
+    overflow-y: auto;
+
+    &__inner {
+      background-color: $dark-color;
+      padding-top: 2em;
+      height: 100%;
+    }
+  }
+
+  &__menu-checkbox {
+    display: none;
+
+    &:checked ~ {
+      .header {
+        &__menu-container {
+          height: calc(100% - 60px);
+        }
+
+        &__menu-btn {
+          .header__menu-btn__icon {
+            transition: $transition-in;
+
+            &::before,
+            &::after {
+              transition: $transition-in;
+            }
+
+            &::after {
+              width: 30%;
+            }
+
+            &::before {
+              width: 60%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  .header {
+    display: none;
+  }
+}

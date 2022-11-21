@@ -1,0 +1,206 @@
+@import '../../../styles/vars';
+
+.aside-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $dark-color;
+  color: $light-color;
+
+  &__panel,
+  &__footer {
+    margin: 0 30px;
+  }
+
+  &__panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+
+    &__search {
+      display: flex;
+      padding-bottom: 0.3em;
+      border-bottom: 2px solid $light-color;
+      align-items: center;
+      margin-bottom: 1.8em;
+
+      &__submit {
+        background: none;
+        border: none;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        margin: 0;
+      }
+
+      &__q {
+        background: transparent;
+        border: none;
+        color: $light-color;
+        width: 100%;
+        margin-left: 1em;
+        font-family: $title-font-family;
+        font-size: 16px;
+      }
+    }
+
+    &__categories {
+      display: flex;
+      flex-direction: column;
+
+      &__primary__link,
+      &__secondary {
+        margin: 0.3em 0;
+        width: fit-content;
+        padding-bottom: 0.2em;
+
+        &.link-active,
+        &.active,
+        &.static-link.active,
+        &:hover {
+          color: $primary-color;
+        }
+
+        &.inverted {
+          color: $primary-color;
+        }
+        &.inverted:hover {
+          color: white;
+        }
+
+        &.link-disabled:hover {
+          color: unset;
+        }
+      }
+
+      &__primary {
+        display: flex;
+        flex-direction: column;
+
+        &__link {
+          font-weight: bold;
+          font-size: 16px;
+          color: $light-color;
+          text-decoration: none;
+        }
+
+        &__title {
+          font-weight: bold;
+          font-size: 16px;
+          color: $light-color;
+          text-decoration: none;
+          margin: 0.3em 0;
+        }
+
+        .ScrollbarsCustom {
+          height: 84px !important;
+          margin-bottom: 0.8em;
+
+          &-TrackY {
+            width: 2px !important;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.5) !important;
+
+            & > .ScrollbarsCustom-ThumbY {
+              background-color: $light-color !important;
+            }
+          }
+        }
+
+        &.spaced {
+          margin: 1.5em 0;
+        }
+      }
+
+      &__secondary, &__secondary__title {
+        display: flex;
+        min-height: 19px;
+        margin-left: 1.4em;
+        font-size: 14px;
+        color: darken($light-color, 20);
+        text-decoration: none;
+
+        &__title {
+          margin: 0.3em 0 0.3em 1.4em;
+          width: fit-content;
+          padding-bottom: 0.2em;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+
+    &__external {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 16px;
+
+      &__app-store {
+        display: flex;
+        width: 9em;
+        height: 2.5em;
+
+        &__card {
+          display: flex;
+          margin-right: 0.8em;
+
+          > img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      &__social {
+        display: flex;
+        margin: 0.4em 0;
+
+        &__card {
+          display: flex;
+          width: 1.8em;
+          height: 1.8em;
+          margin-right: 0.8em;
+        }
+      }
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1em;
+
+      &__link {
+        display: flex;
+        min-height: 12px;
+        font-size: 10px;
+        color: $light-color;
+        text-decoration: underline;
+        margin: 0.3em 0;
+        width: fit-content;
+      }
+    }
+
+    &__copyright {
+      font-family: $title-font-family;
+      font-size: 10px;
+      line-height: 12px;
+      margin-top: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: $size-md - 1) {
+  .aside-content {
+    height: unset;
+    min-height: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+@import '../../../styles/vars';
+
+a.custom-link {
+  color: $dark-color;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a.custom-link:hover {
+    color: $primary-color;
+  }
+}

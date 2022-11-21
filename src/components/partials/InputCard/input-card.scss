@@ -1,0 +1,15 @@
+@import '../../../styles/vars';
+
+.input-card {
+  width: 100%;
+  // border: solid 1px $dark-gray-color;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+
+  &__title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 1em auto 0.5em auto;
+  }
+}

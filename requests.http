@@ -1,0 +1,230 @@
+@baseUrl = http://127.0.0.1:8000/api
+# @baseUrl = https://tbacco.ru/api
+
+# @name login
+POST {{baseUrl}}/login/
+Content-Type: application/json
+
+{
+  "username": "+79991112233",
+  "password": "develop"
+}
+
+###
+
+@token = {{login.response.body.$.auth_token}}
+
+DELETE {{baseUrl}}/login/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/profile/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/categories/?mode=safe
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/?stock=true
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/?mode=safe
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/?q=хооках
+Content-Type: application/json
+
+###
+
+POST {{baseUrl}}/register/
+Content-Type: application/json
+
+{
+  "username": "+79119998844",
+  "first_name": "alex",
+  "last_name": "iva",
+  "birth_date": "2020-01-02",
+  "wholesale": false
+}
+
+###
+
+POST {{baseUrl}}/register/verify/
+Content-Type: application/json
+
+{
+  "signature": "+79119998844:1kiTAz:BBEnb0gi6vSR6wBR1-pz8_Tax3Q",
+  "password": "12"
+}
+
+###
+
+POST {{baseUrl}}/register/verify/sms-repeat/
+Content-Type: application/json
+
+{
+  "signature": "+79119998844:1kiT0v:qqGqcu42khybHZTWpOhpcPfsZUM"
+}
+
+###
+
+GET {{baseUrl}}/basket/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/1125/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/basket/lines/4/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+PUT {{baseUrl}}/basket/lines/265/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "quantity": 1
+}
+
+###
+
+DELETE {{baseUrl}}/basket/lines/4/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+POST {{baseUrl}}/basket/shipping-methods/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "line1": "some address",
+  "line4": "Луга"
+}
+
+###
+
+GET {{baseUrl}}/wishlist/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+POST {{baseUrl}}/wishlist/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "product": 1439
+}
+
+###
+
+DELETE {{baseUrl}}/wishlist/17/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+POST {{baseUrl}}/basket/add-product/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "id": 14481,
+  "quantity": 2
+}
+
+###
+
+POST {{baseUrl}}/checkout/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "shipping_address": {
+    "line1": "test"
+  },
+  "payment_method_code": "cash"
+}
+
+###
+
+GET {{baseUrl}}/orders/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/?brand=1&price_min=1000
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/filters/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+GET {{baseUrl}}/products/filters/?category=55
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+
+PUT https://api.qiwi.com/partner/bill/v1/bills/-5
+Content-Type: application/json
+Authorization: Bearer eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6ImFmazVnZi0wMCIsInVzZXJfaWQiOiI3OTA2NzIyMTAzNSIsInNlY3JldCI6ImU2ZTgyOWM3ZjU4MTMwYzcxYjk0NWNmNjU5NjVlNGRkMjIwNjc0NDFjMzJlMTE2YzNkMjg5MzZmM2M4MzFkNTEifX0=
+
+{
+  "amount": {
+    "currency": "RUB", 
+    "value": "1.00"
+  },
+  "expirationDateTime": "2021-01-16T09:02:00+03:00",
+  "customFields": {
+    "themeCode": "Konstantyn-ZhmNNZ7enF1"
+  }
+}
+
+###
+
+POST https://api.qiwi.com/partner/bill/v1/bills/100347-20210112232106/reject
+Content-Type: application/json
+Authorization: Bearer eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6ImFmazVnZi0wMCIsInVzZXJfaWQiOiI3OTA2NzIyMTAzNSIsInNlY3JldCI6ImU2ZTgyOWM3ZjU4MTMwYzcxYjk0NWNmNjU5NjVlNGRkMjIwNjc0NDFjMzJlMTE2YzNkMjg5MzZmM2M4MzFkNTEifX0=
+
+###
+
+POST https://tbacco.ru/api/yoomoney-notification/
+
+###

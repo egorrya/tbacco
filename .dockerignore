@@ -1,0 +1,10 @@
+# Ignore everything
+**
+
+# Allowed
+!assets/
+!config/
+!src/
+!.babelrc
+!package.json
+!postcss.config.js

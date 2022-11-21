@@ -1,0 +1,83 @@
+@import '../../../styles/vars';
+
+.register-page {
+  display: flex;
+  flex-direction: column;
+}
+
+.register__login-banner {
+  margin: 0 auto;
+
+  margin-top: 2em;
+  font-size: 18px;
+
+  &__link {
+    font-weight: bold;
+  }
+}
+
+.register-agreement {
+  margin-top: 0.8em;
+  line-height: 1.4;
+}
+
+.register-form {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    row-gap: 25px;
+
+    > * > div > input {
+      width: 100%;
+    }
+
+    &__account-type {
+      > * {
+        margin: 0.4em 0;
+      }
+    }
+  }
+
+  > * {
+    margin-top: 0.3em;
+    margin-bottom: 0.3em;
+  }
+
+  &__agreement + label {
+    font-size: 13px;
+
+    &::before {
+      font-size: 16px;
+    }
+  }
+
+  > button {
+    font-size: 16px;
+    font-weight: bold;
+    width: fit-content;
+    padding: 0.6em 1.6em;
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .register-form {
+    max-width: unset;
+
+    &__inputs {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media screen and (max-width: $size-lg) {
+  .register__login-banner {
+    font-size: 16px;
+  }
+}

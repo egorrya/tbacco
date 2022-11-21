@@ -1,0 +1,155 @@
+@import 'styles/vars';
+@import 'styles/normalize';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 14.5px;
+  color: $dark-color;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+p,
+li {
+  line-height: 1.5;
+}
+
+video {
+  background-color: $dark-color;
+}
+
+#root {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+.work-area {
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+@media screen and (max-width: $size-md - 1) {
+  .work-area {
+    padding-top: 60px;
+  }
+}
+
+@media screen and (min-width: $size-lg) {
+  .desktop-disable {
+    display: none;
+  }
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+a:active,
+a:focus,
+button:active,
+button:focus,
+input:active,
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  &.table-md {
+    display: none;
+  }
+
+  thead tr:first-child {
+    border-bottom: none;
+  }
+
+  tr {
+    border-bottom: solid 1px $dark-gray-color;
+  }
+
+  td {
+    img {
+      max-width: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.tbacco-input {
+  margin-top: 0.5em;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  line-height: 1.5;
+
+  width: 260px;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid $dark-color;
+}
+
+.tbacco-phone-container {
+  position: relative;
+
+  &::before {
+    content: '+7';
+    font-size: 22px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }
+
+  & input {
+    padding-left: 32px;
+  }
+}
+
+@media screen and (max-width: $size-lg) {
+  .tbacco-input {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .tbacco-phone-container::before {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  table {
+    &.table-sm {
+      display: none;
+    }
+
+    &.table-md {
+      display: table;
+    }
+  }
+}

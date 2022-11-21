@@ -1,0 +1,17 @@
+@import '../../../styles/vars';
+
+.zoomable-img {
+  background-repeat: no-repeat;
+  margin: 0;
+
+  &:hover img {
+    opacity: 0;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,91 @@
+@import '../../../styles/vars';
+
+.preloader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3em;
+  height: 100%;
+  margin: 6rem auto;
+}
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+
+  div {
+    position: absolute;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
+    &:nth-child(1) {
+      left: 0.15em;
+      animation: bubble1 0.6s infinite;
+    }
+
+    &:nth-child(2) {
+      left: 0.15em;
+      animation: bubble2 0.6s infinite;
+    }
+
+    &:nth-child(3) {
+      left: 1.15em;
+      animation: bubble2 0.6s infinite;
+    }
+
+    &:nth-child(4) {
+      left: 2.15em;
+      animation: bubble3 0.6s infinite;
+    }
+  }
+
+  &__primary {
+    div {
+      background: $primary-color;
+    }
+  }
+
+  &__light {
+    div {
+      background: $light-color;
+    }
+  }
+
+  &__red {
+    div {
+      background: $red-color;
+    }
+  }
+}
+
+@keyframes bubble1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes bubble3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes bubble2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(1em, 0);
+  }
+}

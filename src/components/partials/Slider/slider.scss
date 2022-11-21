@@ -1,0 +1,86 @@
+@import '../../../styles/vars';
+
+$slider-button-padding-sm: 0;
+$slider-button-padding-md: 0;
+$slider-button-padding-lg: 0;
+
+.slider {
+  padding-left: $slider-button-padding-sm;
+  padding-right: $slider-button-padding-sm;
+}
+
+.slick-track,
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.slick-arrow::before {
+  color: $dark-gray-color;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.slick-prev {
+  left: -$slider-button-padding-sm;
+
+  &::before {
+    content: '❮';
+  }
+}
+
+.slick-next {
+  right: -$slider-button-padding-sm;
+
+  &::before {
+    content: '❯';
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  .slider {
+    padding-left: $slider-button-padding-md;
+    padding-right: $slider-button-padding-md;
+  }
+
+  .slick-arrow::before {
+    font-size: 48px;
+  }
+
+  .slick-prev {
+    left: -$slider-button-padding-md;
+  }
+
+  .slick-next {
+    right: -$slider-button-padding-md;
+  }
+}
+
+@media screen and (min-width: $size-lg) {
+  .slider {
+    padding-left: $slider-button-padding-lg;
+    padding-right: $slider-button-padding-lg;
+  }
+
+  .slick-arrow::before {
+    font-size: 64px;
+  }
+
+  .slick-prev {
+    left: -$slider-button-padding-lg;
+  }
+
+  .slick-next {
+    right: -$slider-button-padding-lg;
+  }
+}

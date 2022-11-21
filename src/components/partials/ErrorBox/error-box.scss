@@ -1,0 +1,12 @@
+@import '../../../styles/vars';
+
+.error-box {
+  width: 100%;
+  text-align: center;
+  border: 1px solid lighten($error-color, 10);
+  padding: 0.5em;
+
+  &__msg {
+    color: $error-color;
+  }
+}

@@ -1,0 +1,110 @@
+@import '../../../styles/vars';
+
+.account-page {
+  display: flex;
+  flex-direction: column;
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      text-align: left;
+      text-decoration: none;
+      background-color: $light-color;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      color: $dark-color;
+      margin: 0.2em 0;
+      padding: 1em;
+
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+
+      @media screen and (max-width: 1180px) {
+        border-radius: $border-radius;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &__img {
+        height: 1.6em;
+        width: 1.6em;
+        margin-right: 0.8em;
+
+        &.icon-hover {
+          display: none;
+        }
+      }
+
+      &.active {
+        background-color: $primary-color;
+        color: $light-color;
+
+        .icon-default {
+          display: none;
+        }
+
+        .icon-hover {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__content {
+    margin-top: 2em;
+  }
+}
+
+@media screen and (min-width: $size-lg) {
+  .account-page {
+    flex-direction: row;
+
+    &__nav {
+      width: 260px;
+    }
+
+    &__content {
+      margin-top: 0;
+      padding: 2em;
+      width: calc(100% - 260px);
+      backdrop-filter: blur(30px);
+      box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.1);
+      background-color: $light-color;
+
+      border-radius: 0 $border-radius $border-radius $border-radius;
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .account-page {
+    &__nav {
+      &__item {
+        &:hover {
+          background-color: $primary-color;
+          color: $light-color;
+
+          .icon-default {
+            display: none;
+          }
+
+          .icon-hover {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

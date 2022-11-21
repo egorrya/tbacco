@@ -1,0 +1,110 @@
+@import '../../../styles/vars';
+
+.addresses {
+  &__empty {
+    text-align: center;
+  }
+
+  &__list {
+    &__item {
+      display: flex;
+      flex-direction: column;
+      font-size: 15px;
+      padding: 0.8em 0;
+      border-bottom: solid 1px $dark-gray-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &__address {
+        display: flex;
+        flex-direction: column;
+
+        > * {
+          margin: 0.1em 0;
+        }
+      }
+
+      &__buttons {
+        display: flex;
+        flex-direction: column;
+
+        &__button {
+          position: relative;
+          display: block;
+          border-radius: $border-radius;
+          font-size: 14px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-decoration: none;
+          padding: 0.7em 1.4em 0.7em 3.4em;
+          margin: 0.4em 0;
+          cursor: pointer;
+
+          &.change-btn {
+            color: $light-color;
+            background-color: $dark-gray-color;
+          }
+
+          &.remove-btn {
+            color: $light-color;
+            background-color: $red-color;
+          }
+
+          &__img {
+            position: absolute;
+            left: 15px;
+            height: 1.6em;
+            width: 1.6em;
+            margin-right: 0.8em;
+
+            &.icon-hover {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  .addresses {
+    &__list {
+      &__item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &__address {
+          max-width: 50%;
+        }
+
+        &__buttons {
+          &__button {
+            // padding-left: 1em;
+            // padding-right: 1em;
+            margin: 0.2em 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-lg) {
+  .addresses {
+    &__list {
+      &__item {
+        font-size: 16px;
+
+        &__address {
+          max-width: 70%;
+        }
+      }
+    }
+  }
+}

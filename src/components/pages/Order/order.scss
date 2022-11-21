@@ -1,0 +1,129 @@
+@import '../../../styles/vars';
+
+.order {
+  &__state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+
+    > * {
+      padding-bottom: 0.8em;
+      text-align: center;
+    }
+
+    &__right {
+      .custom-link-button {
+        margin: 0.4em 0 0.4em 0.6em;
+      }
+    }
+  }
+
+  &__positions {
+    margin-top: 1.2em;
+
+    &__table {
+      td {
+        padding: 0.8em 0.3em;
+        font-size: 16px;
+      }
+
+      &__img {
+        max-width: 120px;
+        max-height: 120px;
+      }
+
+      &__price-qty {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        &__spinbox {
+          margin-top: 0.25em;
+          font-size: 30px;
+
+          input {
+            border-width: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  &__shipping-cost {
+    font-size: 20px;
+    text-align: right;
+    margin-top: 1.2em;
+  }
+
+  &__cost {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-top: 0.5em;
+  }
+
+  &__cost {
+    margin-top: 0.5em;
+  }
+
+  &__customer {
+    display: flex;
+    flex-direction: column;
+
+    &__card {
+      margin-top: 2em;
+
+      &__title {
+        font-size: 20px;
+        margin-bottom: 0.7em;
+      }
+
+      &__data {
+        display: flex;
+        flex-direction: column;
+
+        > * {
+          padding: 0.2em 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-md) {
+  .order {
+    &__state,
+    &__customer {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__state {
+      &__left {
+        text-align: left;
+      }
+
+      &__right {
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $size-lg) {
+  .order {
+    &__state {
+      font-size: 20px;
+    }
+
+    &__positions {
+      &__table {
+        td {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

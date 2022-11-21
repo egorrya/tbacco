@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="13.277" viewBox="0 0 24 13.277">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #c3c3c3;
+      }
+    </style>
+  </defs>
+  <path id="angle-down-solid" class="cls-1" d="M4.086,10.781l-1.3,1.3L14.129,23.434l.652.624.652-.624L26.781,12.086l-1.3-1.3-10.7,10.7Z" transform="translate(-2.781 -10.781)"/>
+</svg>

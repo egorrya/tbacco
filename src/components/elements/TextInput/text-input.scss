@@ -1,0 +1,24 @@
+@import '../../../styles/vars';
+
+input.custom-text-input,
+textarea.custom-text-input {
+  border: solid 1px $dark-gray-color;
+  border-radius: $border-radius;
+  background-color: $light-color;
+  font-size: 15px;
+  line-height: 1.4;
+  text-align: left;
+  color: $dark-color;
+  padding: 0.7em 0.7em;
+  width: 100%;
+
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+textarea.custom-text-input {
+  resize: vertical;
+}

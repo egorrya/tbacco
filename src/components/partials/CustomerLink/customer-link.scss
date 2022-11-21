@@ -1,0 +1,22 @@
+@import '../../../styles/vars';
+
+$btn-size: 31px;
+
+.customer-link-btn img {
+  width: $btn-size;
+  height: auto;
+
+  @media screen and (max-width: 1000px) {
+    // margin-top: -3px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .customer-link-btn {
+    > img:hover {
+      // https://stackoverflow.com/questions/22252472/how-to-change-the-color-of-an-svg-element#answer-53336754
+      filter: invert(63%) sepia(90%) saturate(316%) hue-rotate(342deg)
+        brightness(88%) contrast(90%);
+    }
+  }
+}

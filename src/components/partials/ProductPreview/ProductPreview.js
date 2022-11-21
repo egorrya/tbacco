@@ -1,0 +1,52 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { productPreview as productPreviewCreators } from '../../../actions/actionCreators.js';
+import images from '../../../images.js';
+import ProductContent from '../ProductContent/ProductContent.js';
+import './product-preview.scss';
+
+export default function ProductPreview() {
+  const { data: productPreviewData } = useSelector(
+    (state) => state.productPreview
+  );
+  const dispatch = useDispatch();
+
+  const productId = productPreviewData && productPreviewData.id;
+
+  useEffect(() => {
+    document.body.style.overflow = productId ? 'hidden' : 'auto';
+  }, [productId]);
+
+  if (!productId) {
+    return null;
+  }
+
+  const closePreview = () => dispatch(productPreviewCreators.clear());
+
+  const onDialogClick = (event) => {
+    if (event.target === event.currentTarget) {
+      closePreview();
+    }
+  };
+
+  return (
+    <dialog className="product-preview" onClick={onDialogClick}>
+      <div className="product-preview__panel">
+        <div className="product-preview__container">
+          <button
+            className="product-preview__panel__close"
+            onClick={closePreview}
+          >
+            <img
+              className="icon-default"
+              alt="закрыть"
+              src={images.crossGray}
+            />
+          </button>
+
+          <ProductContent id={productId} />
+        </div>
+      </div>
+    </dialog>
+  );
+}

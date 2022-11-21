@@ -1,0 +1,12 @@
+@import '../../../styles/vars';
+
+.error-retry-box {
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+  padding: 1em 0.5em;
+
+  &__msg {
+    margin-bottom: 0.8em;
+  }
+}
